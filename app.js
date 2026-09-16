@@ -1,23 +1,8 @@
-import express from "express";
-import morgan from "morgan";
-import cors from "cors";
-import cookieParser from "cookie-parser";
 import process from "node:process";
+import "./src/utils/env.js";
+import ExpressServer from "./src/server.js";
+import RegisterRoutes from "./src/routes/main.js";
 
-
-const app = express();
-const PORT = process.env.PORT;
-const CLIENT = process.env.CLIENT_URL
-app.use( cors( {
-	origin: CLIENT, 
-	credentials: true,
-} ) );
-app.use( cookieParser() );
-app.use( express.json( {
-	limit: "10mb"
-} ) );
-app.use( express.urlencoded( {
-	limit: "10mb",
-	extended: true 
-} ) );
-app.use
+export default new ExpressServer()
+  .router(RegisterRoutes)
+  .listen(process.env.PORT);
