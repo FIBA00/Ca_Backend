@@ -3,7 +3,7 @@ import { database } from "../database/database.js";
 import { shops } from "../database/models.js";
 import bcrypt from "bcrypt";
 import {
-	generateToken,
-	comparePassword,
-	setAuthCookie
+  generateToken,
+  comparePassword,
+  setAuthCookie,
 } from "../middlewares/auth.middleware.js";
