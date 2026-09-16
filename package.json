@@ -1,13 +1,20 @@
 {
   "name": "cbacknd",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Buy your custom cake",
+  "main": "app.js",
+  "type":"module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js",
+    "dev":"nodemon app.js --config .nodemonrc.json | pino-pretty",
+    "dev:debug": "nodemon src --exec babel-node --config .nodemonrc.json --inspect  | pino-pretty",
+    "test": "mocha --exit",
+    "test:debug": "mocha --inspect-brk --exit",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix ."
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "type": "module"
+  "license": "ISC"
+  
 }
