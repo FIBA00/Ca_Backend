@@ -1,7 +1,9 @@
 import process from "node:process";
-import "./src/utils/env.js";
+
+// ! internal imports
 import ExpressServer from "./src/server.js";
 import RegisterRoutes from "./src/routes/main.js";
+import "./src/configs/env.config.js";
 
 export default new ExpressServer()
   .router(RegisterRoutes)

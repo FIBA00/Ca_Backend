@@ -6,7 +6,7 @@ import bodyParser from "body-parser";
 import os from "os";
 
 // ! internal imports
-import log from "./utils/logger.js"
+import log from "./utils/logger.js";
 import errorHandler from "./middlewares/error_handler.js";
 
 const app = express();
